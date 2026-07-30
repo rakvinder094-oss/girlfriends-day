@@ -165,4 +165,129 @@ openGiftBtn.addEventListener("click", () => {
 
 });
 
+});/* ==========================================
+   PART 3
+   Final Effects + Premium Polish
+========================================== */
+
+
+/* ==========================
+   Reveal Animation Observer
+========================== */
+
+const sections = document.querySelectorAll(".glass");
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+
+        }
+
+    });
+
+},{
+    threshold:0.2
 });
+
+
+sections.forEach(section=>{
+
+    section.style.opacity="0";
+    section.style.transform="translateY(40px)";
+    section.style.transition="1s ease";
+
+    observer.observe(section);
+
+});
+
+
+
+/* ==========================
+   Soft Floating Petals
+========================== */
+
+function createPetal(){
+
+    const petal=document.createElement("div");
+
+    petal.className="petal";
+
+    petal.innerHTML="🌸";
+
+    petal.style.left=Math.random()*100+"vw";
+
+    petal.style.animationDuration=
+    (5+Math.random()*5)+"s";
+
+
+    document.body.appendChild(petal);
+
+
+    setTimeout(()=>{
+
+        petal.remove();
+
+    },10000);
+
+}
+
+
+setInterval(createPetal,1200);
+
+
+
+/* ==========================
+   Button Glow Effect
+========================== */
+
+const buttons=document.querySelectorAll("button,a");
+
+
+buttons.forEach(button=>{
+
+    button.addEventListener("mouseenter",()=>{
+
+        button.style.boxShadow=
+        "0 0 25px rgba(255,120,180,.7)";
+
+    });
+
+
+    button.addEventListener("mouseleave",()=>{
+
+        button.style.boxShadow="";
+
+    });
+
+});
+
+
+
+/* ==========================
+   Final Heartbeat Effect
+========================== */
+
+const finalTitle=document.querySelector("#ending h1");
+
+
+if(finalTitle){
+
+setInterval(()=>{
+
+    finalTitle.style.transform="scale(1.03)";
+
+    setTimeout(()=>{
+
+        finalTitle.style.transform="scale(1)";
+
+    },500);
+
+
+},3000);
+
+}
