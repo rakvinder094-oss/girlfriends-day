@@ -1,844 +1,988 @@
-/* ===================================
-   APPLE INSPIRED PREMIUM THEME
-=================================== */
+/* ==========================================
+   PREMIUM GIRLFRIEND DAY WEBSITE
+   VERSION 2 CSS
+   Rohit ❤️ Sukanya
+========================================== */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
+
 
 body{
 
-font-family:'Poppins',sans-serif;
+    font-family:'Poppins',sans-serif;
 
-background:
-linear-gradient(
-180deg,
-#fff7fa,
-#ffeef4,
-#fff9fb
-);
+    background:
+    linear-gradient(
+        180deg,
+        #fff7fb,
+        #ffeaf3,
+        #fff8fc
+    );
 
-color:#444;
+    color:#4a3540;
 
-overflow-x:hidden;
+    overflow-x:hidden;
 
 }
 
 
-/* ================= Loader ================= */
+/* ==========================
+   BACKGROUND
+========================== */
+
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-2;
+
+    overflow:hidden;
+
+}
+
+
+#gradientGlow{
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(255,160,200,.45),
+        transparent 70%
+    );
+
+    top:-150px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    filter:blur(40px);
+
+}
+
+
+
+/* ==========================
+   LOADER
+========================== */
+
 
 #loader{
 
-position:fixed;
+    position:fixed;
 
-top:0;
-left:0;
+    inset:0;
 
-width:100%;
-height:100%;
+    background:
 
-background:linear-gradient(
-135deg,
-#fff6fa,
-#ffeef4
-);
+    linear-gradient(
+        135deg,
+        #fff0f7,
+        #ffd6e8
+    );
 
-display:flex;
-justify-content:center;
-align-items:center;
+    display:flex;
 
-z-index:99999;
+    justify-content:center;
 
-transition:1s;
-}
+    align-items:center;
 
-.loader-content{
+    z-index:9999;
 
-text-align:center;
-
-}
-
-.loader-flower{
-
-font-size:70px;
-
-animation:bounce 2s infinite;
-
-}
-
-.loader-content h2{
-
-margin-top:25px;
-
-font-weight:500;
-
-color:#cf6c9c;
-
-letter-spacing:1px;
-
-}
-
-@keyframes bounce{
-
-0%,100%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-15px);
-
-}
+    transition:1s;
 
 }
 
 
-/* ================= Floating Tulips ================= */
+.loaderGlass{
 
-.floating-tulips{
+    padding:45px;
 
-position:fixed;
+    text-align:center;
 
-width:100%;
-height:100%;
+    background:
 
-pointer-events:none;
+    rgba(255,255,255,.45);
 
-overflow:hidden;
+    backdrop-filter:blur(25px);
 
-z-index:-1;
-
-}
-
-.floating-tulips span{
-
-position:absolute;
-
-font-size:35px;
-
-opacity:.15;
-
-animation:float 18s linear infinite;
-
-}
-
-.floating-tulips span:nth-child(1){
-left:5%;
-animation-delay:0s;
-}
-
-.floating-tulips span:nth-child(2){
-left:20%;
-animation-delay:3s;
-}
-
-.floating-tulips span:nth-child(3){
-left:38%;
-animation-delay:7s;
-}
-
-.floating-tulips span:nth-child(4){
-left:55%;
-animation-delay:1s;
-}
-
-.floating-tulips span:nth-child(5){
-left:72%;
-animation-delay:9s;
-}
-
-.floating-tulips span:nth-child(6){
-left:90%;
-animation-delay:5s;
-}
-
-@keyframes float{
-
-0%{
-
-transform:translateY(110vh) rotate(0deg);
-
-}
-
-100%{
-
-transform:translateY(-20vh) rotate(360deg);
-
-}
+    border-radius:30px;
 
 }
 
 
-/* ================= Storybook ================= */
+.loaderGlass h2{
+
+    color:#d45b91;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:38px;
+
+}
+
+
+
+/* Animated tulip loader */
+
+.loaderTulip{
+
+    width:60px;
+
+    height:60px;
+
+    margin:25px auto 0;
+
+    background:#ff8fbe;
+
+    border-radius:
+
+    50% 50% 40% 40%;
+
+    animation:bloom 2s infinite;
+
+}
+
+
+@keyframes bloom{
+
+    50%{
+
+        transform:scale(1.2);
+
+    }
+
+}
+
+
+
+/* ==========================
+   STORYBOOK
+========================== */
+
 
 #storybook{
 
-height:100vh;
+    height:100vh;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
-
-}
-
-.book{
-
-width:280px;
-
-height:380px;
-
-perspective:1000px;
-
-cursor:pointer;
-
-}
-
-.cover{
-
-width:100%;
-height:100%;
-
-background:
-
-linear-gradient(
-145deg,
-#ffd6e8,
-#ffbddb
-);
-
-border-radius:20px;
-
-display:flex;
-
-justify-content:center;
-align-items:center;
-
-flex-direction:column;
-
-box-shadow:
-
-0 20px 50px rgba(0,0,0,.15);
-
-transition:1.2s;
-
-transform-origin:left;
-
-}
-
-.cover h1{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:42px;
-
-color:white;
-
-text-align:center;
-
-padding:20px;
-
-}
-
-.cover p{
-
-margin-top:20px;
-
-color:white;
-
-font-size:18px;
-
-}
-
-.book.open .cover{
-
-transform:rotateY(-160deg);
-
-opacity:0;
+    align-items:center;
 
 }
 
 
-/* ================= Main ================= */
+#book{
 
-#mainContent{
+    width:300px;
 
-display:none;
+    height:420px;
 
-padding:40px 18px;
+    perspective:1200px;
+
+    cursor:pointer;
 
 }
 
 
-/* ================= Glass ================= */
+#cover{
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    background:
+
+    linear-gradient(
+        145deg,
+        #ffb7d8,
+        #ff80b5
+    );
+
+
+    border-radius:25px;
+
+
+    box-shadow:
+
+    0 30px 70px rgba(0,0,0,.18);
+
+
+    transform-origin:left;
+
+    transition:1.5s;
+
+}
+
+
+
+#cover h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:55px;
+
+    color:white;
+
+    text-align:center;
+
+}
+
+
+#cover p{
+
+    color:white;
+
+    margin-top:25px;
+
+}
+
+
+
+/* Book open animation */
+
+
+#book.opened #cover{
+
+    transform:
+
+    rotateY(-160deg);
+
+    opacity:0;
+
+}
+
+
+
+/* ==========================
+   WEBSITE
+========================== */
+
+
+#website{
+
+    display:none;
+
+    padding:30px 18px;
+
+}
+
+
+
+/* ==========================
+   GLASS EFFECT
+========================== */
+
 
 .glass{
 
-background:rgba(255,255,255,.35);
+    background:
 
-backdrop-filter:blur(20px);
+    rgba(255,255,255,.45);
 
-border:1px solid rgba(255,255,255,.5);
 
-box-shadow:
+    backdrop-filter:
 
-0 8px 30px rgba(0,0,0,.08);
+    blur(25px);
 
-border-radius:28px;
 
-padding:35px;
+    border:
 
-margin-bottom:35px;
+    1px solid rgba(255,255,255,.6);
+
+
+    border-radius:30px;
+
+
+    padding:35px;
+
+
+    margin:40px auto;
+
+
+    max-width:900px;
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.08);
 
 }
 
 
-/* ================= Hero ================= */
+
+/* ==========================
+   HERO
+========================== */
+
 
 .hero{
 
-text-align:center;
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
 
 }
+
+
+.heroCard{
+
+    text-align:center;
+
+}
+
+
+.small{
+
+    color:#d45b91;
+
+    font-size:18px;
+
+}
+
+
 
 .hero h1{
 
-font-size:52px;
+    font-family:'Cormorant Garamond',serif;
 
-font-family:'Cormorant Garamond',serif;
+    font-size:75px;
 
-color:#d45a92;
+    color:#d4558e;
 
 }
+
+
 
 .hero h2{
 
-margin-top:15px;
+    margin-top:15px;
 
-font-size:22px;
-
-font-weight:500;
+    font-size:28px;
 
 }
+
+
 
 .hero p{
 
-margin-top:25px;
+    margin-top:25px;
 
-line-height:1.9;
+    line-height:2;
 
-font-size:18px;
-
-color:#666;
-
-}
-
-button{
-
-margin-top:30px;
-
-padding:16px 36px;
-
-border:none;
-
-border-radius:50px;
-
-background:#ff7eb8;
-
-color:white;
-
-font-size:17px;
-
-cursor:pointer;
-
-transition:.35s;
-
-box-shadow:
-
-0 10px 25px rgba(255,126,184,.35);
-
-}
-
-button:hover{
-
-transform:translateY(-4px);
-
-background:#ff5ca7;
-
-}
-
-.musicBtn{
-
-display:inline-block;
-
-margin-top:25px;
-
-padding:16px 34px;
-
-background:#ff8ec4;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:40px;
-
-transition:.35s;
-
-}
-
-.musicBtn:hover{
-
-transform:translateY(-3px);
+    font-size:18px;
 
 }
 
 
-/* ================= Letter ================= */
+button,
+.musicCard a{
 
-.hidden{
+    display:inline-block;
 
-display:none;
+    margin-top:30px;
+
+    padding:15px 40px;
+
+    border-radius:50px;
+
+    border:none;
+
+    background:#ff78b4;
+
+    color:white;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    transition:.4s;
 
 }
 
-.letter h2{
 
-font-family:'Cormorant Garamond',serif;
 
-font-size:40px;
+button:hover,
+.musicCard a:hover{
 
-margin-bottom:20px;
+    transform:translateY(-5px);
 
-color:#cf6c9c;
+    box-shadow:
 
-}
-
-.letter p{
-
-white-space:pre-line;
-
-line-height:2;
-
-font-size:17px;
-
-color:#555;
+    0 15px 30px rgba(255,120,180,.4);
 
 }/* ==========================================
+   VERSION 2 CSS
+   PART 2
+========================================== */
+
+
+/* ==========================
+   LOVE LETTER
+========================== */
+
+
+#letterSection h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:45px;
+
+    color:#d4558e;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.paper{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #fffdfd,
+        #fff1f6
+    );
+
+
+    padding:35px;
+
+    border-radius:25px;
+
+
+    box-shadow:
+
+    inset 0 0 30px rgba(255,150,190,.15);
+
+
+}
+
+
+
+.paper p{
+
+    font-size:18px;
+
+    line-height:2;
+
+    white-space:pre-line;
+
+    color:#5d4652;
+
+}
+
+
+
+/* ==========================
    MUSIC
-========================================== */
-
-.music{
-text-align:center;
-}
-
-.music h2{
-font-family:'Cormorant Garamond',serif;
-font-size:42px;
-color:#d45a92;
-margin-bottom:10px;
-}
-
-.music p{
-color:#666;
-font-size:17px;
-margin-bottom:10px;
-}
+========================== */
 
 
-/* ==========================================
-   GIFT SECTION
-========================================== */
+.musicCard{
 
-.giftSection{
-text-align:center;
-}
-
-.giftSection h2{
-font-family:'Cormorant Garamond',serif;
-font-size:42px;
-color:#d45a92;
-margin-bottom:35px;
-}
-
-#giftBox{
-
-width:160px;
-height:160px;
-
-margin:auto;
-
-position:relative;
-
-cursor:pointer;
-
-transition:.6s;
-
-}
-
-.box{
-
-position:absolute;
-
-bottom:0;
-
-width:160px;
-height:110px;
-
-background:linear-gradient(
-135deg,
-#ff90bf,
-#ff6fae
-);
-
-border-radius:10px;
-
-box-shadow:
-0 20px 45px rgba(255,120,170,.35);
-
-}
-
-.box::before{
-
-content:"";
-
-position:absolute;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:24px;
-height:110px;
-
-background:#ffe4ee;
-
-}
-
-.lid{
-
-position:absolute;
-
-top:18px;
-
-width:170px;
-height:38px;
-
-left:-5px;
-
-background:linear-gradient(
-135deg,
-#ff6fae,
-#ff8fbe
-);
-
-border-radius:10px;
-
-transition:.8s;
-
-transform-origin:left;
-
-z-index:10;
-
-}
-
-.lid::before{
-
-content:"";
-
-position:absolute;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:22px;
-height:38px;
-
-background:#ffe4ee;
-
-}
-
-#giftBox.open .lid{
-
-transform:
-rotate(-35deg)
-translateY(-35px);
-
-}
-
-#giftBox:hover{
-
-transform:scale(1.05);
+    text-align:center;
 
 }
 
 
-/* ==========================================
-   BLOOMING FLOWERS
-========================================== */
+.musicCard h2{
 
-.bloom{
+    font-family:'Cormorant Garamond',serif;
 
-position:absolute;
+    font-size:45px;
 
-font-size:38px;
-
-opacity:0;
-
-animation:bloomFlower 2.2s forwards;
+    color:#d4558e;
 
 }
 
-@keyframes bloomFlower{
+
+
+
+/* ==========================
+   GIFT BOX
+========================== */
+
+
+.giftCard{
+
+    text-align:center;
+
+}
+
+
+
+.giftCard h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:45px;
+
+    color:#d4558e;
+
+}
+
+
+
+#gift{
+
+    width:180px;
+
+    height:180px;
+
+    margin:50px auto;
+
+    position:relative;
+
+}
+
+
+
+#giftBase{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:180px;
+
+    height:120px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ff91c2,
+        #ff5ca5
+    );
+
+
+    border-radius:15px;
+
+    box-shadow:
+
+    0 25px 50px rgba(255,100,170,.35);
+
+}
+
+
+
+#giftBase::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    height:120px;
+
+    width:25px;
+
+    background:#ffe5ef;
+
+}
+
+
+
+#giftLid{
+
+    position:absolute;
+
+    top:25px;
+
+    left:-10px;
+
+    width:200px;
+
+    height:45px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ff5ca5,
+        #ff88ba
+    );
+
+
+    border-radius:15px;
+
+    z-index:2;
+
+    transition:1s;
+
+    transform-origin:left;
+
+}
+
+
+
+#giftLid::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:25px;
+
+    height:45px;
+
+    background:#ffe5ef;
+
+}
+
+
+
+#gift.opened #giftLid{
+
+    transform:
+
+    rotate(-40deg)
+
+    translateY(-40px);
+
+}
+
+
+
+/* Gift Glow */
+
+
+#giftGlow{
+
+    position:absolute;
+
+    inset:-30px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    rgba(255,150,200,.5),
+
+    transparent 70%
+
+    );
+
+    opacity:0;
+
+    transition:1s;
+
+}
+
+
+
+#gift.opened #giftGlow{
+
+    opacity:1;
+
+}
+
+
+
+/* ==========================
+   BLOOM TULIPS
+========================== */
+
+
+.bloomTulip{
+
+    position:absolute;
+
+    bottom:70px;
+
+    font-size:45px;
+
+    animation:
+
+    flowerRise 3s forwards;
+
+    z-index:10;
+
+}
+
+
+
+@keyframes flowerRise{
+
 
 0%{
 
-transform:
-translateY(40px)
-scale(.2);
+    transform:
 
-opacity:0;
+    translate(0,0)
+
+    scale(.3);
+
+    opacity:0;
+
+}
+
+
+
+40%{
+
+    opacity:1;
 
 }
 
-60%{
 
-opacity:1;
-
-}
 
 100%{
 
-transform:
-translateY(-180px)
-translateX(var(--x))
-rotate(var(--r))
-scale(1.2);
+    transform:
 
-opacity:0;
+    translate(var(--moveX),-220px)
 
-}
+    rotate(var(--rotate))
 
-}
+    scale(1.2);
 
-
-/* ==========================================
-   FINAL MESSAGE
-========================================== */
-
-#finalMessage{
-
-padding-bottom:80px;
-
-animation:fadeUp 1.5s;
-
-}
-
-.finalCard{
-
-text-align:center;
-
-}
-
-.finalCard h1{
-
-font-size:58px;
-
-font-family:'Cormorant Garamond',serif;
-
-color:#d6518f;
-
-margin:25px 0;
-
-}
-
-.finalCard p{
-
-font-size:18px;
-
-line-height:2;
-
-color:#555;
-
-}
-
-.flowers{
-
-font-size:44px;
-
-letter-spacing:8px;
-
-animation:pulse 3s infinite;
+    opacity:0;
 
 }
 
 
-/* ==========================================
-   ANIMATIONS
-========================================== */
+}
 
-@keyframes fadeUp{
+
+
+
+
+/* ==========================
+   FLOATING PETALS
+========================== */
+
+
+.petal{
+
+    position:fixed;
+
+    top:-50px;
+
+    font-size:25px;
+
+    animation:
+
+    petalFall linear forwards;
+
+    z-index:-1;
+
+}
+
+
+
+@keyframes petalFall{
+
 
 from{
 
-opacity:0;
+    transform:
 
-transform:
-translateY(50px);
+    translateY(-50px)
+
+    rotate(0deg);
 
 }
+
+
 
 to{
 
-opacity:1;
+    transform:
 
-transform:
-translateY(0);
+    translateY(110vh)
 
-}
-
-}
-
-@keyframes pulse{
-
-0%{
-
-transform:scale(1);
-
-}
-
-50%{
-
-transform:scale(1.08);
-
-}
-
-100%{
-
-transform:scale(1);
-
-}
+    rotate(360deg);
 
 }
 
 
-/* ==========================================
+}
+
+
+
+
+/* ==========================
+   FINAL MESSAGE
+========================== */
+
+
+#ending{
+
+    min-height:70vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+.finalGlass{
+
+    text-align:center;
+
+}
+
+
+
+.finalGlass h1{
+
+    font-family:
+
+    'Cormorant Garamond',serif;
+
+
+    font-size:70px;
+
+    color:#d4558e;
+
+    transition:.5s;
+
+}
+
+
+
+.finalGlass p{
+
+    font-size:20px;
+
+    line-height:2;
+
+    margin-top:25px;
+
+}
+
+
+
+/* ==========================
+   HIDDEN
+========================== */
+
+
+.hidden{
+
+    display:none;
+
+}
+
+
+
+/* ==========================
    MOBILE
-========================================== */
+========================== */
+
 
 @media(max-width:768px){
 
+
+
 .hero h1{
 
-font-size:42px;
+    font-size:48px;
 
 }
+
+
 
 .hero h2{
 
-font-size:20px;
+    font-size:22px;
 
 }
 
-.hero p{
 
-font-size:16px;
-
-}
-
-.letter h2{
-
-font-size:34px;
-
-}
-
-.music h2{
-
-font-size:34px;
-
-}
-
-.giftSection h2{
-
-font-size:34px;
-
-}
-
-.finalCard h1{
-
-font-size:40px;
-
-}
 
 .glass{
 
-padding:25px;
-
-border-radius:22px;
+    padding:25px;
 
 }
+
+
+
+#book{
+
+    width:260px;
+
+    height:370px;
+
+}
+
+
+
+#cover h1{
+
+    font-size:42px;
+
+}
+
+
+
+.finalGlass h1{
+
+    font-size:42px;
+
+}
+
+
 
 button,
-.musicBtn{
+.musicCard a{
 
-width:100%;
-
-font-size:16px;
-
-padding:15px;
+    width:100%;
 
 }
 
-#giftBox{
 
-transform:scale(.9);
-
-}
-
-.loader-flower{
-
-font-size:58px;
-
-}
-
-.loader-content h2{
-
-font-size:22px;
-
-padding:0 20px;
-
-}
-
-}
-
-@media(max-width:420px){
-
-.hero h1{
-
-font-size:36px;
-
-}
-
-.finalCard h1{
-
-font-size:34px;
-
-}
-
-.flowers{
-
-font-size:32px;
-
-}
 
 }
